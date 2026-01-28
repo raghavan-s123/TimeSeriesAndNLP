@@ -1,0 +1,47 @@
+Electricity consumption patterns change over time due to multiple factors such as population growth, economic activity, seasonal variations, and special events or festivals. Understanding these patterns is essential for effective energy planning, demand forecasting, and resource optimization. 
+
+
+
+Before developing forecasting or analytical models, it is important to visually explore the historical electricity consumption data to identify underlying trends, recurring patterns, and potential anomalies. 
+
+
+
+In this task, you are required to visualize electricity consumption over time using the given dataset and interpret the observed behavior from the plot. 
+
+
+
+Objectives 
+
+
+
+Analyze consumption trends over time 
+Observe whether electricity consumption shows an increasing, decreasing, or stable trend across the years. 
+Identify long-term growth patterns in energy usage. 
+Identify seasonality and recurring patterns 
+Examine periodic rises and falls in consumption that may indicate seasonal or monthly cycles. 
+Understand regular fluctuations in the time series. 
+Assess the impact of festivals or special events 
+Relate peaks in electricity consumption to higher values in the Festivals/Special_events column. 
+Determine whether special occasions correspond to increased power usage. 
+Detect unusual spikes or drops 
+Spot sudden increases or decreases in consumption that deviate from normal patterns. 
+Consider whether these deviations could indicate anomalies, data issues, or exceptional events. 
+Prepare data for further analysis 
+Use insights from visualization to guide preprocessing steps such as smoothing, decomposition, or feature engineering before building predictive models. 
+
+
+
+
+Sample Visualization
+
+
+
+
+
+
+
+﻿
+
+
+
+This visualization serves as an exploratory step to better understand electricity demand behavior and support informed decision-making in energy consumption analysis and forecasting. 

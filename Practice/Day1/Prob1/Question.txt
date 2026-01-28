@@ -1,0 +1,211 @@
+# QUESTION
+# Problem statement : 
+
+
+
+# A financial analytics firm wants to prepare historical stock price data for further analysis and modeling. Before applying advanced forecasting or machine learning techniques, it is essential to clean and inspect the dataset to ensure data quality and understand basic price behavior over time.
+
+
+
+# The dataset contains daily stock price information, including Open, High, Low, Close prices, and trading Volume. As an initial preprocessing step, the analytics team must load the data, clean it by handling missing and duplicate values, and examine how the stock’s closing price changes over time.
+
+
+
+# You are required to perform the following tasks using Python and pandas:
+
+
+
+# Load the dataset – Read the stock price data from the provided Excel/CSV file into a pandas DataFrame.
+# Parse the date column – Convert the Date column into datetime format and set it as the DataFrame index.
+# Check and handle missing values – Identify missing values in the dataset and handle them appropriately.
+# Check and remove duplicates – Detect duplicate rows and remove them if present.
+# Analyze closing price trend – Display summary information that helps understand how the Close price varies over time.
+
+
+# This preprocessing step ensures the dataset is clean, consistent, and suitable for further financial analysis and modeling.
+
+
+
+# CSV File Structure
+
+
+
+
+
+# ﻿
+
+
+
+# Sample Data
+
+
+
+# Date,Open,High,Low,Close,Volume
+
+# 1/3/2006,34.29,34.29,33.2,33.52,3011402
+
+# 1/4/2006,33.43,33.85,33.42,33.82,2608419
+
+# 1/5/2006,33.82,34.2,33.73,33.86,1964803
+
+# 1/6/2006,34.23,34.3,33.81,34.06,5064600
+
+# 1/9/2006,34,34.74,33.99,34.71,6648959
+
+# 1/10/2006,34.61,34.85,34.54,34.74,1051123
+
+# 1/11/2006,34.82,35.36,34.8,35.34,4111695
+
+# 1/12/2006,35.25,35.32,34.74,34.79,5649193
+
+# 1/13/2006,34.65,34.74,34.35,34.47,4009183
+
+# Input format :
+# CSV File Input:
+
+# The program prompts the user to enter the name of the CSV file containing the needed data.
+# Input must include the file extension .csv.
+# Output format :
+# Output Format 
+
+
+
+# The program generates the following outputs in sequence: 
+
+
+
+# 1. First 5 rows of the dataset: 
+
+
+
+# Displays a DataFrame showing the first 5 stock price records. 
+
+# Includes the columns: 
+
+# Date, Open, High, Low, Close, Volume 
+
+# Ends with a line showing DataFrame dimensions in the format: 
+
+# [5 rows x 6 columns] 
+
+
+
+# 2. Missing values report: 
+
+
+
+# Displays the count of missing values for each column. 
+
+# Format: 
+
+# column_name    count 
+
+
+
+# 3. Duplicate rows count: 
+
+
+
+# Prints the total number of duplicate rows in the dataset as a single integer. 
+
+
+
+# Example: 
+
+# Number of duplicate rows: 0 
+
+
+
+# 4. Close price summary statistics: 
+
+
+
+# Displays descriptive statistics for the Close column using pandas .describe() format. 
+
+# Includes: 
+
+# count 
+# mean 
+# std 
+# min 
+# 25% 
+# 50% 
+# 75% 
+# max 
+
+
+# Refer to the sample output for exact formatting specifications. 
+
+# Code constraints :
+# CSV / Excel File Constraints 
+
+
+
+# File must exist in the same directory as the Python script. 
+# File must contain a header row. 
+# Required columns (case-sensitive): 
+# Date 
+# Open 
+# High 
+# Low 
+# Close 
+# Volume 
+
+
+# Column Data Constraints 
+
+
+
+# Date 
+# Must be a valid date format parseable by pandas. 
+# Open, High, Low, Close 
+# Must be numeric (float) values. 
+# Volume 
+# Must be a non-negative integer. 
+
+
+# Program Constraints 
+
+
+
+# Uses pandas for data handling. 
+# Visualization libraries (e.g., matplotlib, seaborn) are not used. 
+# The Date column is parsed and set as the index. 
+# Missing values are handled using forward fill. 
+# Duplicate rows are detected and removed. 
+# All outputs are produced using print() statements only. 
+# Output order and labels must match the specified format. 
+ 
+
+# Sample test cases :
+# Input 1 :
+# Sample.csv
+# Output 1 :
+# First 5 rows of the dataset:
+#        Date   Open   High    Low  Close   Volume
+# 0  1/3/2006  34.29  34.29  33.20  33.52  3011402
+# 1  1/4/2006  33.43  33.85  33.42  33.82  2608419
+# 2  1/5/2006  33.82  34.20  33.73  33.86  1964803
+# 3  1/6/2006  34.23  34.30  33.81  34.06  5064600
+# 4  1/9/2006  34.00  34.74  33.99  34.71  6648959
+
+# Missing values in dataset:
+# Open      0
+# High      0
+# Low       0
+# Close     0
+# Volume    0
+# dtype: int64
+
+# Number of duplicate rows: 0
+
+# Close price summary statistics:
+# count    53.000000
+# mean     35.184151
+# std       0.733289
+# min      33.520000
+# 25%      34.680000
+# 50%      35.050000
+# 75%      35.850000
+# max      36.370000
+# Name: Close, dtype: float64

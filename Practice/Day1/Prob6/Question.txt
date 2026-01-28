@@ -1,0 +1,181 @@
+A financial analytics firm is analyzing historical stock market data to understand price movements and prepare the dataset for time series modeling. The dataset contains monthly stock price information along with technical indicators such as moving averages and exponential smoothing. 
+
+
+
+Before performing advanced analysis or forecasting, the analytics team needs to inspect the dataset, verify its structure, and confirm that the data has been loaded correctly. 
+
+
+
+Your task is to write a Python program that: 
+
+
+
+Loads the stock market dataset. 
+Displays the first 5 rows of the dataset. 
+Displays the structure of the dataset, including column names, data types, and non-null values. 
+This step ensures the dataset is suitable for further time series analysis and modeling. 
+
+
+
+CSV File Structure
+
+
+
+
+
+
+
+
+
+Sample Data ;
+
+ 
+
+﻿Date,Open,High,Low,Close,Volume,Close_diff,SMA_10,SMA_30,SES
+
+2010-03-31 00:00:00,65.76043478,66.06434783,65.40652174,65.76608696,3990184.783,1.645034325,60.27028213,58.459316,60.52407717
+
+2010-04-30 00:00:00,69.41285714,69.87904762,69.07095238,69.54380952,3583619.333,3.777722567,61.39961763,58.87455893,61.57247913
+
+2010-05-31 00:00:00,69.2725,69.875,68.4535,69.1315,3635816.2,-0.412309524,62.60554035,59.23872004,63.16674521
+
+2010-06-30 00:00:00,68.37136364,68.91227273,67.86454545,68.31363636,4432160.636,-0.817863636,63.85823732,59.50880792,64.35969616
+
+2010-07-31 00:00:00,69.37904762,69.96190476,68.73666667,69.51428571,3566306.571,1.200649351,65.21738018,60.01066506,65.1504842
+
+2010-08-31 00:00:00,72.09545455,72.68818182,71.76818182,72.33363636,4191079.636,2.819350649,66.64851654,60.58013627,66.02324451
+
+
+
+
+
+
+
+Input format :
+CSV File Input:
+
+The program prompts the user to enter the name of the CSV file containing the needed data.
+Input must include the file extension .csv.
+Output format :
+Output Format 
+
+
+
+The program should display the following outputs in sequence: 
+
+
+
+The program generates the following outputs in sequence: 
+
+
+
+First 5 rows of the dataset 
+Displays a pandas DataFrame showing the first 5 records. 
+Includes all columns such as Date, Open, High, Low, Close, Volume, and technical indicators. 
+Output ends with a line similar to: 
+
+
+[5 rows x 10 columns] 
+
+ 
+
+Dataset structure information 
+Displays the output of DataFrame.info() 
+Includes: 
+Column names 
+Non-null counts 
+Data types 
+Memory usage 
+ 
+
+
+
+Refer to the sample output for exact formatting specifications. 
+
+Code constraints :
+Constraints 
+
+
+
+File Constraints
+
+
+The input file must be a valid CSV file.
+The file must exist in the same directory as the Python program.
+The file must contain a header row.
+
+
+Column Constraints
+
+
+
+Column Name / Description 
+
+Datetime  - Monthly timestamp in YYYY-MM-DD format 
+
+Consumption  - Electricity consumption (float values) 
+
+Festivals/Special_events  - Count of festivals or special events (non-negative integers) 
+
+Power_Consumption_diff  - First-order differenced consumption values (float, may contain NaN in first row) 
+
+ 
+
+Program Constraints 
+
+
+
+The program must be written in Python.
+
+The program must use:
+
+
+
+pandas for data handling.
+The provided timeseries_module.py.
+
+
+Warnings must be suppressed.
+
+The program must execute successfully for each test case independently and when all test cases are run together.
+
+  
+
+Sample test cases :
+Input 1 :
+Sample.csv
+Output 1 :
+First 5 rows of the dataset:
+                  Date       Open       High  ...  SMA_10  SMA_30        SES
+0  2006-01-31 00:00:00  34.854000  35.166500  ...     NaN     NaN  34.818000
+1  2006-02-28 00:00:00  35.901579  36.162105  ...     NaN     NaN  34.818000
+2  2006-03-31 00:00:00  34.624783  34.889130  ...     NaN     NaN  35.036189
+3  2006-04-30 00:00:00  34.625263  34.901053  ...     NaN     NaN  34.963212
+4  2006-05-31 00:00:00  34.499545  34.672273  ...     NaN     NaN  34.908044
+
+[5 rows x 10 columns]
+
+Missing values in dataset:
+Open           0
+High           0
+Low            0
+Close          0
+Volume         0
+Close_diff     1
+SMA_10         9
+SMA_30        29
+SES            0
+dtype: int64
+
+Number of duplicate rows: 0
+
+Close price summary statistics:
+count    33.000000
+mean     47.778103
+std       9.805941
+min      33.041364
+25%      37.882000
+50%      48.955652
+75%      57.086522
+max      62.729048
+Name: Close, dtype: float64

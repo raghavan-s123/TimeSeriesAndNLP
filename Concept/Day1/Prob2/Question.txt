@@ -1,0 +1,48 @@
+Electricity consumption data often contains multiple underlying components that influence its behavior over time, such as long-term growth, seasonal usage patterns, and random fluctuations. Simply observing the raw consumption values may not be sufficient to fully understand these influences. 
+
+
+
+To gain deeper insights, time series decomposition is used to break down electricity consumption into its constituent components: trend, seasonality, and residuals. This helps analysts understand the drivers of consumption and prepare the data for accurate forecasting and modeling. 
+
+
+
+In this task, you are required to analyze the decomposed electricity consumption time series shown in the visualization. 
+
+
+
+
+
+Objectives 
+
+
+
+Analyze the overall consumption pattern 
+Observe the original electricity consumption series to understand its variability over time. 
+Identify visible fluctuations and overall behavior. 
+Examine the trend component 
+Identify long-term increases or decreases in electricity usage. 
+Understand how demand has evolved across years independent of seasonal effects. 
+Interpret the seasonal component 
+Detect repeating patterns that occur at regular intervals (e.g., monthly or yearly). 
+Understand cyclical consumption behavior caused by weather, habits, or recurring events. 
+Evaluate the residual component 
+Analyze irregular fluctuations not explained by trend or seasonality. 
+Identify possible anomalies, noise, or unexpected events affecting consumption. 
+Prepare insights for forecasting and modeling 
+Use decomposition results to determine whether the data is suitable for time series models. 
+Decide if additional preprocessing such as smoothing or anomaly handling is required. 
+
+
+Sample Visualization
+
+
+
+
+
+
+
+﻿
+
+
+
+This decomposition-based analysis helps isolate key drivers of electricity consumption and supports informed decision-making for demand forecasting and energy management. 

@@ -1,0 +1,48 @@
+Electricity consumption data often contains short-term fluctuations caused by seasonal effects, daily usage behavior, and irregular events. These fluctuations can obscure the underlying trend, making it difficult to analyze long-term demand patterns. 
+
+
+
+To reduce noise and better understand the overall behavior of electricity consumption, moving average techniques are commonly applied. Different types of moving averages smooth the data in distinct ways and respond differently to recent changes. 
+
+
+
+In this task, you are required to analyze and compare various moving average techniques applied to electricity consumption data, as shown in the visualization. 
+
+
+
+Objectives 
+
+
+
+Understand raw consumption behavior 
+Observe the original electricity consumption data with its fluctuations and variability. 
+Identify overall growth and short-term volatility. 
+Analyze Simple Moving Average (SMA) 
+Examine how SMA smooths the data by averaging fixed-size windows. 
+Understand its lagging effect in reflecting changes in consumption. 
+Evaluate Weighted Moving Average (WMA) 
+Observe how assigning higher weights to recent observations affects smoothing. 
+Compare its responsiveness to SMA. 
+Assess Exponential Moving Average (EMA) 
+Analyze how EMA reacts more quickly to recent changes in consumption. 
+Understand its suitability for detecting trend shifts. 
+Compare smoothing techniques 
+Compare SMA, WMA, and EMA in terms of smoothness and sensitivity. 
+Identify which technique best captures the underlying trend without excessive delay. 
+Support forecasting and decision-making 
+Use insights from moving averages to support demand forecasting and energy planning. 
+Determine which smoothing method is most appropriate for further modeling. 
+ 
+
+
+
+Sample Visualization
+
+
+
+
+
+
+
+﻿This analysis highlights how different moving average techniques can be used to smooth electricity consumption data and extract meaningful trends for effective energy management and forecasting. 
+
