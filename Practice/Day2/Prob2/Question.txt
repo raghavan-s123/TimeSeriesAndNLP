@@ -1,0 +1,194 @@
+A financial analytics firm wants to analyze historical stock price data to understand short-term market behavior before applying advanced forecasting techniques. The firm needs to build a time-series forecasting model using the closing price data by identifying appropriate lag values, fitting an Auto-Regressive (AR) or Moving Average (MA) model, and diagnosing the model’s adequacy.
+
+
+
+The task involves splitting the data into training and testing sets, selecting the best AR or MA model based on Akaike Information Criterion (AIC) values, fitting the selected model to the training data, and performing diagnostic checks on the model residuals using the Ljung–Box test to verify whether the model successfully captures short-term dependencies in stock price movements.
+
+
+
+CSV File Structure
+
+
+
+﻿
+
+
+
+﻿
+
+
+
+Sample Data
+
+
+
+Date,Open,High,Low,Close,Volume,Close_diff,SMA_10,SMA_30,SES
+
+2006-01-31 00:00:00,34.854,35.1665,34.5245,34.818,3777774.8,,,,34.818
+
+2006-02-28 00:00:00,35.90157895,36.16210526,35.67157895,35.90894737,4196577.053,1.090947368,,,34.818
+
+2006-03-31 00:00:00,34.62478261,34.88913043,34.45347826,34.67130435,3952055.652,-1.237643021,,,35.03618947
+
+2006-04-30 00:00:00,34.62526316,34.90105263,34.38631579,34.68736842,3888881,0.016064073,,,34.96321245
+
+2006-05-31 00:00:00,34.49954545,34.67227273,34.185,34.38681818,4088439.591,-0.300550239,,,34.90804364
+
+2006-06-30 00:00:00,33.05636364,33.44227273,32.72545455,33.04136364,3620141.818,-1.345454545,,,34.80379855
+
+2006-07-31 00:00:00,34.253,34.545,33.9705,34.3015,3923373.4,1.260136364,,,34.45131157
+
+2006-08-31 00:00:00,35.53652174,35.77521739,35.18565217,35.52565217,3917862.391,1.224152174,,,34.42134925
+
+Input format :
+CSV File Input:
+
+The program prompts the user to enter the name of the CSV file containing the needed data.
+Input must include the file extension .csv.
+Output format :
+Output Format 
+
+
+
+The program should display the following outputs in sequence: 
+
+
+
+Training and Testing Dataset Sizes 
+Number of observations in training data 
+Number of observations in testing data 
+AIC Values for Candidate Models 
+AIC scores for AR(p) models (for p = 1 to 5) 
+AIC scores for MA(q) models (for q = 1 to 5) 
+Best Model Selection 
+Type of model selected (AR or MA) 
+Corresponding p or q value 
+Minimum AIC score 
+Model Summary 
+Estimated coefficients 
+Standard errors 
+Log-likelihood 
+AIC and BIC values 
+Ljung–Box Test Results 
+Test statistic for selected lags 
+Corresponding p-values indicating presence or absence of residual autocorrelation 
+
+
+Refer to the sample output for exact formatting specifications. 
+
+Code constraints :
+Constraints 
+
+
+
+Dataset Constraints 
+
+
+
+File Format 
+The dataset must be provided in CSV format. 
+The file must be readable using the pandas.read_csv() function. 
+Mandatory Columns 
+The dataset must contain the following columns with exact names (case-sensitive): 
+Date or Datetime – Date of stock price record 
+Close – Closing stock price 
+Close_diff – First-order differenced closing price 
+Date Column Constraints 
+The Date/Datetime column must be convertible to a valid datetime format. 
+The date column should represent monthly or daily time-series data. 
+Dates must be in chronological order or sortable. 
+Numeric Data Constraints 
+Close values must be positive real numbers. 
+Close_diff must be numeric (float or integer). 
+Missing values may exist only in the first row of Close_diff due to differencing. 
+Missing Values 
+Rows with missing values in Close_diff must be handled (dropped or filled) before modeling. 
+The dataset must contain enough valid observations after cleaning to fit AR/MA models. 
+Time-Series Nature 
+Observations must be equally spaced in time. 
+No duplicate timestamps should be present in the dataset. 
+
+
+Program Constraints 
+
+
+
+Libraries 
+The program must use the following Python libraries only: 
+pandas for data handling 
+numpy for numerical operations 
+statsmodels for time-series modeling and diagnostics 
+Train–Test Split 
+The dataset must be split using time-based splitting, not random sampling. 
+80% of the data must be used for training. 
+20% of the data must be used for testing. 
+Model Selection 
+Only AR(p) and MA(q) models are allowed. 
+Values of p and q must be tested in the range 1 to 5. 
+Model selection must be based strictly on minimum AIC value. 
+Model Fitting 
+The selected model must be fitted using the ARIMA class from statsmodels. 
+Differencing order (d) must be 0, as differencing is pre-applied. 
+Residual Diagnostics 
+Residuals must be extracted from the fitted model. 
+The Ljung–Box test must be applied to check for autocorrelation. 
+A statistically insignificant p-value (p > 0.05) indicates a well-fitted model. 
+Output Requirements 
+The program must print: 
+AIC values for all tested models 
+The best model type and parameters 
+Model summary 
+Ljung–Box test results 
+Execution Constraints 
+The program must run without user modification to column names. 
+No data leakage is allowed (test data must not influence training). 
+ 
+
+Sample test cases :
+Input 1 :
+Sample.csv
+Output 1 :
+Training data size: 40
+Testing data size: 10
+
+AR(1) AIC: 191.59086714273573
+AR(2) AIC: 189.20098006263137
+AR(3) AIC: 190.67458510333532
+AR(4) AIC: 192.4124860096751
+AR(5) AIC: 193.78315851241666
+MA(1) AIC: 191.3534787275239
+MA(2) AIC: 189.95111485590692
+MA(3) AIC: 191.8870843852301
+MA(4) AIC: 193.5277256785748
+MA(5) AIC: 191.98323872327822
+
+Best Model: AR(2)
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:             Close_diff   No. Observations:                   40
+Model:                 ARIMA(2, 0, 0)   Log Likelihood                 -90.600
+Date:                Tue, 13 Jan 2026   AIC                            189.201
+Time:                        08:18:06   BIC                            195.956
+Sample:                    02-28-2006   HQIC                           191.644
+                         - 05-31-2009                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.5076      0.353      1.437      0.151      -0.185       1.200
+ar.L1          0.0874      0.191      0.458      0.647      -0.287       0.462
+ar.L2         -0.3181      0.146     -2.176      0.030      -0.605      -0.032
+sigma2         5.4016      1.405      3.843      0.000       2.647       8.156
+===================================================================================
+Ljung-Box (L1) (Q):                   0.05   Jarque-Bera (JB):                 4.15
+Prob(Q):                              0.82   Prob(JB):                         0.13
+Heteroskedasticity (H):               2.96   Skew:                            -0.78
+Prob(H) (two-sided):                  0.06   Kurtosis:                         3.27
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+
+Ljung-Box Test Results:
+    lb_stat  lb_pvalue
+1  0.055365   0.813978

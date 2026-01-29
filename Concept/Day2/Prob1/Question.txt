@@ -1,0 +1,225 @@
+An energy analytics firm has already preprocessed electricity consumption data and applied differencing to make the time series stationary. As the next step in time series modeling, the firm wants to build AutoRegressive (AR) and Moving Average (MA) models to capture temporal dependencies in the differenced electricity consumption data. 
+
+
+
+Based on prior lag analysis (PACF and ACF) performed in Demo 2.1, the optimal lag values have been identified as: 
+
+
+
+AR(2) for the AutoRegressive model 
+MA(1) for the Moving Average model 
+
+
+You are required to split the dataset into training and testing sets and then build and fit both AR and MA models using the identified lag parameters. 
+
+
+
+Tasks to perform: 
+
+
+
+1: Split the dataset into training (80%) and testing (20%) sets. 
+
+2: Build and fit an AR(2) model using the training data. 
+
+3: Build and fit an MA(1) model using the training data. 
+
+4: Display the model summaries for both models. 
+
+
+
+This step helps in understanding how past values and past errors influence electricity consumption changes over time. 
+
+This preprocessing step ensures the dataset is clean, consistent, and suitable for further financial analysis and modeling.
+
+
+
+CSV File Structure
+
+
+
+﻿
+
+
+
+Sample Data
+
+
+
+Datetime,Consumption,Festivals/Special_events,Power_Consumption_diff
+
+1988-01-01,107.5052,6,
+
+1988-02-01,105.672,1,-1.833200000000005
+
+1988-03-01,97.4502,1,-8.221800000000002
+
+1988-04-01,92.4714,1,-4.978799999999993
+
+1988-05-01,90.3151,1,-2.1563000000000017
+
+1988-06-01,93.0904,1,2.7753000000000014
+
+1988-07-01,97.6202,0,4.5297999999999945
+
+1988-08-01,98.2485,1,0.6283000000000101
+
+Input format :
+CSV File Input:
+
+The program prompts the user to enter the name of the CSV file containing the needed data.
+Input must include the file extension .csv.
+Output format :
+Output Format 
+
+
+
+The program generates the following outputs in sequence: 
+
+
+
+1. Training and testing data size: 
+
+
+
+Displays the number of records used for training and testing. 
+
+
+
+Format: 
+
+
+
+Training data size: <integer> 
+
+Testing data size: <integer> 
+
+ 
+
+2. AR(2) Model Summary: 
+
+
+
+Displays the statistical summary of the fitted AR(2) model. 
+
+Includes: 
+
+Model type 
+Log likelihood 
+AIC, BIC 
+Coefficients for AR lags 
+Standard errors, z-values, and p-values 
+Output is displayed in the standard statsmodels summary table format. 
+
+
+
+3. MA(1) Model Summary: 
+
+
+
+Displays the statistical summary of the fitted MA(1) model. 
+
+Includes: 
+
+Model type 
+Log likelihood 
+AIC, BIC 
+Coefficient for MA lag 
+Standard errors, z-values, and p-values 
+Output is displayed in the standard statsmodels summary table format. 
+
+
+
+Refer to the sample output for exact formatting specifications. 
+
+Code constraints :
+Constraints 
+
+
+
+Dataset Constraints 
+
+
+
+File must be a valid CSV file. 
+Required columns (case-sensitive): 
+Datetime 
+Power_Consumption_diff 
+Datetime must be parseable as a datetime value. 
+Power_Consumption_diff must contain numeric values. 
+First record may contain a missing differenced value and will be ignored. 
+
+
+Program Constraints 
+
+
+
+Uses pandas for data handling. 
+Uses statsmodels for AR and MA modeling. 
+No visualization libraries are used. 
+Dataset is split strictly in 80:20 ratio. 
+AR model order must be (2, 0, 0). 
+MA model order must be (0, 0, 1). 
+Model summaries are displayed using .summary(). 
+All outputs must appear in the defined order. 
+
+
+Sample test cases :
+Input 1 :
+Sample.csv
+Output 1 :
+Training data size: 40
+Testing data size: 11
+
+AR(2) Model Summary:
+                                 SARIMAX Results                                  
+==================================================================================
+Dep. Variable:     Power_Consumption_diff   No. Observations:                   40
+Model:                     ARIMA(2, 0, 0)   Log Likelihood                 -99.875
+Date:                    Tue, 13 Jan 2026   AIC                            207.750
+Time:                            05:48:00   BIC                            214.505
+Sample:                        02-01-1988   HQIC                           210.192
+                             - 05-01-1991                                         
+Covariance Type:                      opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.0264      0.493      0.053      0.957      -0.940       0.992
+ar.L1          0.8126      0.103      7.895      0.000       0.611       1.014
+ar.L2         -0.7686      0.096     -8.021      0.000      -0.956      -0.581
+sigma2         8.2093      2.348      3.496      0.000       3.607      12.812
+===================================================================================
+Ljung-Box (L1) (Q):                   3.04   Jarque-Bera (JB):                 0.75
+Prob(Q):                              0.08   Prob(JB):                         0.69
+Heteroskedasticity (H):               1.17   Skew:                            -0.06
+Prob(H) (two-sided):                  0.78   Kurtosis:                         2.34
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+
+MA(1) Model Summary:
+                                 SARIMAX Results                                  
+==================================================================================
+Dep. Variable:     Power_Consumption_diff   No. Observations:                   40
+Model:                     ARIMA(0, 0, 1)   Log Likelihood                -109.913
+Date:                    Tue, 13 Jan 2026   AIC                            225.827
+Time:                            05:48:01   BIC                            230.893
+Sample:                        02-01-1988   HQIC                           227.658
+                             - 05-01-1991                                         
+Covariance Type:                      opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -0.1529      1.089     -0.140      0.888      -2.287       1.982
+ma.L1          0.7951      0.129      6.143      0.000       0.541       1.049
+sigma2        13.9126      4.058      3.428      0.001       5.959      21.866
+===================================================================================
+Ljung-Box (L1) (Q):                   0.44   Jarque-Bera (JB):                 1.01
+Prob(Q):                              0.51   Prob(JB):                         0.60
+Heteroskedasticity (H):               1.28   Skew:                             0.01
+Prob(H) (two-sided):                  0.66   Kurtosis:                         2.22
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculate

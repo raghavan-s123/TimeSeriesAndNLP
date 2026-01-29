@@ -1,0 +1,123 @@
+To model and forecast daily stock prices effectively, it is essential to understand how current price movements are influenced by past values. This is achieved by examining the autocorrelation structure of the time series after ensuring stationarity through differencing. The Autocorrelation Function (ACF) and Partial Autocorrelation Function (PACF) plots provide critical insights for selecting suitable parameters for Autoregressive (AR) and Moving Average (MA) models. 
+
+
+
+Using the provided stock price dataset, the analysis focuses on the differenced Close price series (Close_diff), which represents day-to-day changes in stock prices. 
+
+
+
+Analysis Description 
+
+
+
+1.1 Data Preparation 
+
+
+
+The stock price data is loaded into the Jupyter Notebook environment. 
+The Date column is converted to a datetime datatype and set as the index to preserve temporal order. 
+Precomputed smoothing columns (SMA_10, SMA_30, SES) are removed to avoid interference with correlation analysis. 
+Missing values are identified and removed to ensure clean input for ACF and PACF computations. 
+The final series (Close_diff) is stationary and appropriate for time-series diagnostics. 
+
+
+1.2 Autocorrelation Function (ACF) Analysis 
+
+
+
+The ACF plot shows the correlation between the differenced series and its lagged values up to 30 lags. 
+Most autocorrelation coefficients fall within the confidence bounds, indicating weak overall serial correlation. 
+A small but noticeable spike at lag 1 suggests short-term dependence. 
+The rapid decay of correlations implies that long-memory effects have been removed by differencing. 
+
+
+Implication for MA model (q): 
+
+
+
+Since the ACF cuts off quickly and does not show persistent significant lags, a low-order MA model (q = 0 or 1) is appropriate. 
+ 
+
+1.3 Partial Autocorrelation Function (PACF) Analysis 
+
+
+
+The PACF plot highlights the direct effect of individual lags on the current value. 
+A significant spike at lag 1 is observed, while subsequent lags remain within the confidence interval. 
+This pattern indicates that the current price change is primarily influenced by the immediately preceding change. 
+
+
+Implication for AR model (p): 
+
+
+
+The sharp cutoff after lag 1 suggests a low-order AR model (p = 1). 
+ 
+
+1.4 Model Order Identification 
+
+
+
+Based on the observed ACF and PACF patterns: 
+
+
+
+p (AR order) ≈ 1 
+q (MA order) ≈ 0 or 1 
+
+
+These findings support the use of a simple ARIMA model, such as ARIMA(1, d, 0) or ARIMA(1, d, 1), where d represents the differencing already applied. 
+
+
+
+Objectives 
+
+
+
+Understand short-term price dependence 
+
+
+
+Identify how recent price movements affect current values. 
+
+
+Support ARIMA model specification 
+
+
+
+Use ACF and PACF plots to determine appropriate AR and MA orders. 
+
+
+Validate stationarity adjustments 
+
+
+
+Confirm that differencing has effectively removed trend and long-term correlations. 
+
+
+Enable reliable forecasting 
+
+
+
+Select parsimonious models that balance simplicity and predictive power. 
+
+
+
+
+Sample visualization : 
+
+
+
+
+
+ 
+
+
+
+This ACF–PACF–based analysis provides a clear, statistically grounded approach to identifying suitable AR and MA parameters for stock price forecasting. 
+
+
+
+ 
+
+Zip - ML471_S2_Datafile_Practice.zip ( 6.7 KB )

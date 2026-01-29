@@ -1,0 +1,61 @@
+Stock Price Forecasting Using AR/MA Models 
+
+
+
+In financial time-series analysis, forecasting future stock price movements is essential for decision-making and risk assessment. This problem focuses on using AutoRegressive (AR) and Moving Average (MA) models to predict future changes in a stock’s closing price and evaluate the effectiveness of these models. 
+
+
+
+You are provided with a historical stock price dataset containing monthly observations of Open, High, Low, Close, Volume, and engineered features such as Close price differences (Close_diff), Simple Moving Averages (SMA_10, SMA_30), and Simple Exponential Smoothing (SES). The Close_diff variable represents the month-to-month change in the closing price and serves as the target variable for modeling. 
+
+
+
+The dataset is divided into training and testing periods. An MA model with auto-selected parameters is fitted on the training data to capture short-term dependencies and noise patterns in the differenced closing prices. Using the fitted model, forecasts are generated for the test period and compared against actual observed values. 
+
+
+
+Objectives 
+
+
+
+Forecast Generation 
+Use an AR or MA time-series model to forecast future values of the stock’s closing price (or its differenced form) over the test period. 
+Visual Evaluation 
+Plot the training data, actual test values, and model forecasts on a single graph to visually assess how well the model tracks real market movements. 
+The training data shows historical behavior. 
+The actual test data represents real observed fluctuations. 
+The forecast line illustrates the model’s predicted values. 
+Performance Assessment 
+Quantitatively evaluate forecast accuracy using standard error metrics: 
+MAE (Mean Absolute Error) – average magnitude of forecast errors. 
+MAPE (Mean Absolute Percentage Error) – relative error in percentage terms. 
+RMSE (Root Mean Squared Error) – penalizes larger errors and reflects overall prediction quality. 
+
+
+Expected Outcome 
+
+
+
+By completing this task, you will: 
+
+
+
+Understand how AR/MA models can be applied to stock price forecasting. 
+Interpret visual forecast plots to identify underfitting or overfitting. 
+Use MAE, MAPE, and RMSE to objectively assess model performance. 
+Gain insights into whether a simple MA model is sufficient to capture the volatility and dynamics present in real stock price movements. 
+
+
+This analysis helps bridge statistical time-series modeling with practical financial forecasting and model evaluation. 
+
+
+
+
+
+Sample visualization : 
+
+
+
+ 
+
+Zip - ML471_S2_Datafile_Practice.zip ( 6.7 KB )
