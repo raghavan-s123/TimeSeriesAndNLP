@@ -1,0 +1,87 @@
+Accurate forecasting of power consumption is crucial for efficient energy planning and demand management. In this problem, you are tasked with modeling and forecasting monthly power consumption changes using an ARMA (AutoRegressive Moving Average) approach and rigorously evaluating the model’s adequacy. 
+
+
+
+The dataset consists of monthly power consumption records along with contextual information such as festivals/special events. To ensure stationarity, the analysis focuses on the differenced power consumption series (Power_Consumption_diff), which represents month-to-month changes in consumption. 
+
+
+
+After preprocessing (datetime conversion, indexing, and handling missing values), stationarity of the differenced series is confirmed using the Augmented Dickey-Fuller (ADF) test. The ACF and PACF plots (as shown in the figure) are then used to identify appropriate values of p (AR order) and q (MA order) for the ARMA model: 
+
+
+
+Significant spikes in the PACF at lower lags suggest potential AR terms. 
+Gradual decay or significant spikes in the ACF indicate suitable MA terms. 
+ 
+
+
+
+Task Objectives 
+
+
+
+1. Fit the ARMA Model and Interpret Model Diagnostics 
+
+
+
+Fit an ARMA(p, q) model on the training portion of Power_Consumption_diff using the p and q values selected from ACF and PACF analysis. 
+Interpret the fitted model using: 
+AIC (Akaike Information Criterion) and BIC (Bayesian Information Criterion) to assess model parsimony and goodness of fit (lower values indicate a better model). 
+Ljung–Box test on residuals to check for remaining autocorrelation and validate whether the model has sufficiently captured the time-series structure. 
+
+
+2. Forecast Visualization 
+
+
+
+Generate out-of-sample forecasts using the fitted ARMA model. 
+Plot the training data, actual test data, and forecasted values together to visually evaluate prediction accuracy and alignment with observed consumption changes. 
+
+
+3. Prediction and Accuracy Metrics 
+
+
+
+Use the ARMA model to make predictions on the test dataset. 
+Quantitatively evaluate forecast performance using standard metrics: 
+MAE (Mean Absolute Error) – average absolute forecast error. 
+MAPE (Mean Absolute Percentage Error) – relative accuracy in percentage terms. 
+RMSE (Root Mean Squared Error) – penalizes large deviations and reflects overall forecast reliability. 
+
+
+4. Residual Diagnostics 
+
+
+
+Analyze the model residuals to ensure no systematic patterns remain: 
+Plot residuals over time to check randomness. 
+Examine ACF of residuals to confirm absence of autocorrelation. 
+Validate that residuals behave like white noise, indicating the ARMA model has adequately explained the underlying dynamics. 
+ 
+
+
+
+Expected Outcome 
+
+
+
+By completing this task, you will: 
+
+
+
+Apply ACF and PACF analysis to select appropriate ARMA parameters. 
+Fit and interpret an ARMA model using statistical diagnostics (AIC, BIC, Ljung–Box). 
+Visually and quantitatively evaluate forecasting performance. 
+Verify model adequacy through residual analysis. 
+
+
+Sample visualization :
+
+
+
+﻿
+
+
+
+This end-to-end workflow demonstrates how classical time-series models can be effectively used for power consumption forecasting and how their assumptions and performance are systematically validated. 
+
