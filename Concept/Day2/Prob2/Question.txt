@@ -1,0 +1,136 @@
+To accurately forecast short-term changes in electricity consumption, the firm develops an Autoregressive (AR) time-series model using the differenced power consumption data (Power_Consumption_diff). Since model performance depends heavily on selecting appropriate lag parameters, an automated, data-driven approach is adopted to identify the best AR configuration and validate its reliability. 
+
+
+
+The analysis integrates model selection, diagnostic testing, forecasting, and performance evaluation, supported by visual comparison between actual and predicted values. 
+
+
+
+Analysis Description 
+
+
+
+1. AR Model Parameter Selection 
+
+
+
+Multiple AR(p) models are evaluated by varying the lag order p (0–14). 
+The Akaike Information Criterion (AIC) is used to compare models. 
+The model with the lowest AIC is selected as the best-fitting AR model. 
+Based on this process, AR(14) is identified as the optimal configuration. 
+
+
+2. Model Fitting and Summary 
+
+
+
+The selected AR(14) model is trained on the training subset of the differenced data. 
+Model summary statistics confirm that lagged values significantly contribute to explaining current changes in power consumption. 
+
+
+3. Residual Diagnostics (Ljung–Box Test) 
+
+
+
+The Ljung–Box test is applied to model residuals to detect remaining autocorrelation. 
+Test results show no significant autocorrelation at lag 1, indicating that: 
+The AR model successfully captures temporal dependencies. 
+Residuals behave like white noise, satisfying a key modeling assumption. 
+ 
+
+4. Forecasting and Visualization 
+
+
+
+The fitted AR model is used to generate forecasts on the test dataset. 
+The visualization displays: 
+Training data (blue): historical differenced consumption used for model fitting. 
+Actual test data (orange dashed): observed consumption changes. 
+Forecasted values (green dashed): model predictions. 
+
+
+Observations 
+
+
+
+Forecasted values closely follow the oscillatory pattern of the actual data. 
+The model effectively captures short-term fluctuations, though some deviations occur during extreme spikes. 
+ 
+
+
+
+5. Model Evaluation Metrics 
+
+
+
+The forecast accuracy is assessed using standard error metrics: 
+
+
+
+MAE (Mean Absolute Error): Measures average absolute deviation. 
+RMSE (Root Mean Squared Error): Penalizes larger errors more heavily. 
+MAPE (Mean Absolute Percentage Error): Indicates relative forecast accuracy. 
+
+
+These metrics demonstrate that the AR model provides a reasonable fit for short-term forecasting of differenced power consumption. 
+
+
+
+Objectives 
+
+
+
+Identify optimal AR structure 
+
+
+
+Use AIC-based grid search to select the most suitable lag order. 
+
+
+Validate model assumptions 
+
+
+
+Apply the Ljung–Box test to confirm residual independence. 
+
+
+Evaluate forecasting performance 
+
+
+
+Quantify accuracy using MAE, RMSE, and MAPE. 
+
+
+Visualize forecast effectiveness 
+
+
+
+Compare predicted and actual values to assess trend and volatility capture. 
+
+
+Support data-driven forecasting decisions 
+
+
+
+Establish a statistically sound AR model for short-term power consumption prediction. 
+
+
+Sample visualization :
+
+
+
+﻿
+
+ 
+
+
+
+ 
+
+
+
+This end-to-end AR modeling process ensures robust parameter selection, reliable diagnostics, and meaningful forecasts, forming a strong foundation for operational planning and energy demand management. 
+
+ 
+
+Zip - ML471_S2_Datafile_Concept(in).zip ( 4.5 KB )

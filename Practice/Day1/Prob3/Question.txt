@@ -1,0 +1,109 @@
+# Problem Description 
+
+
+
+# To better understand both short-term fluctuations and long-term movements in stock prices, the firm applies moving average–based smoothing techniques to the Close price data. Moving averages help reduce market noise, highlight underlying trends, and generate actionable signals for potential future price movements. 
+
+
+
+# Using the same historical dataset, the analysis combines Simple Moving Averages (SMA) and Simple Exponential Smoothing (SES) to compare their effectiveness in trend detection and responsiveness. 
+
+
+
+# Analysis Description 
+
+
+
+# 1.1 Simple Moving Averages (SMA) 
+
+
+
+# The first visualization overlays the actual Close price with: 
+
+
+
+# 10-day SMA (short-term trend) 
+# 30-day SMA (long-term trend) 
+
+
+# Observations 
+
+
+
+# The 10-day SMA closely follows the actual price, reacting quickly to short-term price changes and volatility. 
+# The 30-day SMA is smoother and lags behind the price, clearly capturing the long-term upward trend. 
+# Crossovers between the 10-day and 30-day SMAs indicate potential buy or sell signals, where: 
+# Short-term SMA crossing above the long-term SMA suggests bullish momentum. 
+# Short-term SMA crossing below the long-term SMA suggests potential bearish movement. 
+ 
+
+# 1.2 Simple Exponential Smoothing (SES) 
+
+
+
+# The second visualization compares the original Close price with the SES-smoothed series. 
+
+
+
+# Observations 
+
+
+
+# SES assigns more weight to recent observations, making it more responsive than long-period SMAs. 
+# The smoothed curve effectively reduces short-term noise while preserving the overall trend. 
+# SES adapts faster to trend changes than the 30-day SMA but remains smoother than the raw price data. 
+
+
+# Objectives 
+
+
+
+# Identify short-term price movements 
+
+
+
+# Use the 10-day SMA to detect rapid changes and momentum shifts. 
+
+
+# Capture long-term trends 
+
+
+
+# Use the 30-day SMA to understand sustained market direction and reduce volatility effects. 
+
+
+# Compare smoothing techniques 
+
+
+
+# Evaluate responsiveness and smoothness differences between SMA and SES. 
+# Determine which method better suits short-term signals versus long-term trend analysis. 
+
+
+# Support forecasting and trading decisions 
+
+
+
+# Use SMA crossovers as early indicators of potential trend reversals. 
+# Apply SES-smoothed data as a stable input for forecasting models. 
+
+
+# Sample Visualization
+
+# 1.1
+
+
+
+
+
+# 1.2
+
+
+
+
+
+
+
+# This combined moving average and smoothing analysis provides clear insights into trend behavior, helping the firm interpret market direction and improve decision-making for future stock price movements. 
+
+# Zip - ML471_S1_Datafile_Practice.zip ( 42.8 KB )

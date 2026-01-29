@@ -1,0 +1,96 @@
+Problem Description 
+
+
+
+Before applying time-series forecasting models, it is essential to verify whether the stock’s Close price data is stationary, as many statistical models assume constant mean, variance, and autocovariance over time. Non-stationary data can lead to misleading forecasts and unreliable model performance. 
+
+
+
+Using the same historical Close price dataset, the firm applies the Augmented Dickey-Fuller (ADF) test to evaluate stationarity. Since stock prices typically exhibit trends, the analysis includes transforming the data through first-order differencing if non-stationarity is detected. 
+
+
+
+The visualization shows the differenced Close price series, which represents the change in price between consecutive periods. 
+
+
+
+Analysis Description 
+
+
+
+ADF Test on Original Close Price (3.1) 
+
+
+
+The ADF test is first applied to the raw Close price series. 
+Due to the presence of a clear upward trend and evolving mean, the test typically fails to reject the null hypothesis, indicating that the original series is non-stationary. 
+
+
+First-Order Differencing and ADF Test (3.2) 
+
+
+
+First-order differencing is performed by computing the change between consecutive Close prices. 
+The ADF test is then reapplied to the differenced series. 
+The test result generally rejects the null hypothesis, confirming that the differenced series is stationary. 
+
+
+Differenced Data Visualization and Pattern Interpretation (3.3) 
+
+
+
+The plotted differenced series fluctuates around a mean close to zero, with no visible long-term trend. 
+Variance appears relatively stable over time, satisfying key stationarity conditions. 
+Sharp positive and negative spikes represent sudden price changes driven by short-term market events. 
+The absence of persistent patterns suggests that most trend effects have been successfully removed. 
+
+
+Objectives 
+
+
+
+Validate stationarity of stock prices 
+
+
+
+Use the ADF test to assess whether the original Close price series meets stationarity requirements. 
+
+
+Apply transformation techniques 
+
+
+
+Perform first-order differencing to remove trend and stabilize the mean. 
+
+
+Interpret differenced time series behavior 
+
+
+
+Analyze fluctuations around zero to confirm stationarity. 
+Identify volatility clusters and abrupt price movements. 
+
+
+Prepare data for forecasting models 
+
+
+
+Ensure the transformed series is suitable for ARIMA and other time-series models. 
+Improve model reliability by working with stationary data. 
+ 
+
+Sample Visualization
+
+
+
+
+
+
+
+
+
+   This process ensures that the stock price data is properly conditioned for accurate and robust forecasting analysis. 
+
+
+
+Zip - ML471_S1_Datafile_Practice.zip ( 42.8 KB )

@@ -1,0 +1,73 @@
+Analyzing long-term stock price movements is essential for understanding market behavior, identifying trends, and supporting informed investment decisions. Stock prices often exhibit volatility due to market sentiment, economic factors, and company-specific events, making it challenging to distinguish meaningful trends from short-term fluctuations. 
+
+
+
+The visualization presents the historical closing price of a stock over time, illustrating how the price evolves across multiple years. The chart highlights periods of steady growth, temporary corrections, and increased volatility, offering insight into the stock’s overall performance and market dynamics. 
+
+
+
+In this task, you are required to interpret the stock price time-series visualization and evaluate the underlying trend and variability shown in the data. 
+
+
+
+Objectives 
+
+
+
+Analyze overall price trend 
+
+
+
+Identify whether the stock demonstrates a long-term upward, downward, or sideways trend. 
+Observe key growth phases and consolidation periods across the timeline. 
+
+
+Examine volatility and price fluctuations 
+
+
+
+Detect periods of high and low volatility in the stock’s closing price. 
+Assess how frequently and sharply the price deviates from the general trend. 
+
+
+Identify significant turning points 
+
+
+
+Locate major peaks, troughs, and trend reversals in the price series. 
+Relate these turning points to possible market or economic influences. 
+
+
+Assess trend consistency 
+
+
+
+Determine whether the upward movement is sustained or interrupted by frequent corrections. 
+Evaluate the stability of price increases over successive periods. 
+
+
+Evaluate suitability for forecasting and investment analysis 
+
+
+
+Assess whether the historical price pattern provides a reliable basis for trend-based forecasting. 
+Use the observed behavior to support decisions related to risk assessment, timing, and long-term investment planning. 
+ 
+
+
+
+Sample Visualization
+
+
+
+
+
+
+
+
+
+This problem focuses on developing time-series interpretation skills and understanding how visual stock price data can inform financial analysis and decision-making. 
+
+   
+
+Zip - ML471_S1_Datafile_Practice.zip ( 42.8 KB )

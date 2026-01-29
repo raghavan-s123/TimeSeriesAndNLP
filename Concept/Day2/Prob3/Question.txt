@@ -1,0 +1,306 @@
+An electricity distribution company wants to analyze historical electricity consumption data to understand long-term trends and seasonal patterns in energy usage. The dataset contains records of electricity consumption over multiple years along with information about festivals or special events that may influence demand.
+
+
+
+To support effective planning and forecasting, the analytics team needs to perform time series analysis on the electricity consumption data using decomposition techniques. This will help separate the data into Trend, Seasonality, and Residual components and determine which decomposition model best fits the data.
+
+
+
+As part of this analysis, you are required to complete the following tasks:
+
+
+
+Load required libraries – Import all necessary Python libraries for data analysis and time series decomposition.
+Load the dataset – Read the electricity consumption CSV file into a pandas DataFrame.
+Parse date column – Convert the DATE column into a datetime format and set it as the DataFrame index.
+Visualize raw data – Plot the raw electricity consumption values over time to understand overall behavior.
+Data preprocessing – Handle missing values and smooth outliers to prepare the data for time series decomposition.
+Additive decomposition – Decompose the time series using an additive model to extract Trend, Seasonality, and Residual components.
+Multiplicative decomposition – Decompose the time series using a multiplicative model to extract Trend, Seasonality, and Residual components.
+Model comparison – Compare additive and multiplicative decompositions visually.
+Model selection – Analyze the components from both models and identify the most suitable decomposition method for the dataset.
+
+
+This analysis provides critical insights into electricity demand patterns and supports improved forecasting and decision-making.
+
+
+
+CSV File Structure
+
+
+
+﻿
+
+
+
+Sample Data
+
+
+
+DATE,Consumption,Festivals/Special_events
+
+01-01-1988,107.5052,6
+
+02-01-1988,105.672,1
+
+03-01-1988,97.4502,1
+
+04-01-1988,92.4714,1
+
+05-01-1988,90.3151,1
+
+06-01-1988,93.0904,1
+
+07-01-1988,97.6202,0
+
+08-01-1988,98.2485,1
+
+Input format :
+CSV File Input:
+
+The program prompts the user to enter the name of the CSV file containing the needed data.
+Input must include the file extension .csv.
+Output format :
+The program generates the following outputs in sequence: 
+
+
+
+1. First 5 rows of the dataset: 
+
+
+
+Displays a DataFrame showing the first 5 records of the electricity consumption dataset. 
+
+Output includes the following columns: 
+
+Consumption 
+Festivals/Special_events 
+The DATE column is set as the DataFrame index. 
+
+Ends with a line indicating the DataFrame dimensions in the format: 
+
+[5 rows x 2 columns] 
+
+ 
+
+
+
+2. Data preprocessing status: 
+
+
+
+Prints a confirmation message indicating that missing values and outliers in the Consumption column have been handled successfully. 
+
+
+
+Example format: 
+
+
+
+Data preprocessing completed. 
+
+
+
+3. Additive decomposition components: 
+
+
+
+Displays the first 5 values of each component obtained using the additive time series decomposition model. 
+
+
+
+Includes the following sections printed in order: 
+
+
+
+Trend – First 5 non-null trend values 
+Seasonality – First 5 seasonal values 
+Residuals – First 5 non-null residual values 
+Each section label is printed followed by its corresponding numeric values in pandas Series format. 
+
+
+
+4. Multiplicative decomposition components: 
+
+
+
+Displays the first 5 values of each component obtained using the multiplicative time series decomposition model. 
+
+
+
+Includes the following sections printed in order: 
+
+
+
+Trend – First 5 non-null trend values 
+Seasonality – First 5 seasonal values 
+Residuals – First 5 non-null residual values 
+
+
+Each section label is printed followed by its corresponding numeric values in pandas Series format. 
+
+
+
+5. Model comparison conclusion: 
+
+
+
+Prints explanatory statements to guide model selection based on decomposition behavior. 
+
+
+
+Output includes: 
+
+
+
+A statement indicating that the additive model is suitable when seasonal variations remain constant. 
+A statement indicating that the multiplicative model is suitable when seasonal variations change proportionally with the trend. 
+ 
+
+Refer to the sample output for exact formatting specifications. 
+
+ 
+
+Code constraints :
+CSV File Constraints 
+
+
+
+File must be a valid comma-separated CSV file with a .csv extension. 
+File must exist in the same directory as the Python script or notebook. 
+File must contain a header row with exact column names (case-sensitive). 
+The dataset must contain the following exact columns: 
+DATE 
+Consumption 
+Festivals/Special_events 
+
+
+Column Data Constraints 
+
+
+
+DATE 
+Must be in a valid date format (DD-MM-YYYY). 
+Values must be parseable using pandas.to_datetime() with dayfirst=True. 
+Consumption 
+Must contain numeric (float) values. 
+Represents electricity consumption values. 
+Values must be greater than zero. 
+Missing values (if any) will be replaced using the column mean. 
+Outliers are handled using the Interquartile Range (IQR) method. 
+Festivals/Special_events 
+Must contain non-negative integer values. 
+Represents the number of festivals or special events on a given date. 
+Column is not used directly in decomposition but must be present in the dataset. 
+
+
+Program Constraints 
+
+
+
+The program uses the following Python libraries: 
+pandas for data loading and manipulation 
+numpy for numerical operations 
+statsmodels for time series decomposition 
+Visualization libraries (e.g., matplotlib) are not used. 
+The CSV filename is read dynamically using input(). 
+If the CSV file is not found, the program prints: 
+
+
+File not found. 
+
+ 
+
+and terminates execution. 
+
+
+
+The .head() method displays exactly the first 5 rows of the dataset. 
+The DATE column is converted to datetime format and set as the DataFrame index. 
+Missing values in the Consumption column are handled using mean imputation. 
+Outliers in the Consumption column are handled using the IQR method. 
+Time series decomposition is performed using: 
+Additive model with period=12 
+Multiplicative model with period=12 
+For both decomposition models: 
+Trend, Seasonal, and Residual components are computed. 
+Only the first 5 values of each component are printed. 
+Null values are removed before printing Trend and Residuals. 
+All outputs are displayed using print() statements only. 
+Output formatting (labels, spacing, and order) must exactly match the sample output provided. 
+ 
+
+Sample test cases :
+Input 1 :
+Sample.csv
+Output 1 :
+First 5 records of dataset:
+            Consumption  Festivals/Special_events
+DATE                                             
+1988-01-01     107.5052                         6
+1988-01-02     105.6720                         1
+1988-01-03      97.4502                         1
+1988-01-04      92.4714                         1
+1988-01-05      90.3151                         1
+
+Data preprocessing completed.
+
+Additive Model Components (First 5 Values)
+Trend:
+DATE
+1988-01-07    97.199021
+1988-01-08    97.120496
+1988-01-09    96.999113
+1988-01-10    96.971338
+1988-01-11    96.973842
+Name: trend, dtype: float64
+
+Seasonality:
+DATE
+1988-01-01    10.069852
+1988-01-02     6.323946
+1988-01-03     1.256202
+1988-01-04    -5.419002
+1988-01-05    -7.072679
+Name: seasonal, dtype: float64
+
+Residuals:
+DATE
+1988-01-07   -2.057778
+1988-01-08   -2.063405
+1988-01-09    0.657023
+1988-01-10    0.535136
+1988-01-11    0.533361
+Name: resid, dtype: float64
+
+Multiplicative Model Components (First 5 Values)
+Trend:
+DATE
+1988-01-07    97.199021
+1988-01-08    97.120496
+1988-01-09    96.999113
+1988-01-10    96.971338
+1988-01-11    96.973842
+Name: trend, dtype: float64
+
+Seasonality:
+DATE
+1988-01-01    1.099814
+1988-01-02    1.062177
+1988-01-03    1.011969
+1988-01-04    0.946694
+1988-01-05    0.930646
+Name: seasonal, dtype: float64
+
+Residuals:
+DATE
+1988-01-07    0.980318
+1988-01-08    0.980983
+1988-01-09    1.006167
+1988-01-10    1.003421
+1988-01-11    1.003909
+Name: resid, dtype: float64
+
+Model Comparison Conclusion:
+If seasonal values are constant → Additive model fits better.
+If seasonal values change pro

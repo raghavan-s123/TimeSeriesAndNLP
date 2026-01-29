@@ -1,0 +1,165 @@
+Problem Description 
+
+
+
+To improve the accuracy of stock price forecasting, the company seeks to clearly separate the long-term trend, recurring seasonal patterns, and irregular fluctuations embedded in the historical Close price data. Since stock prices are influenced by both structural market behavior and random events, decomposing the time series into interpretable components is essential for selecting appropriate forecasting models. 
+
+
+
+Using the same Close price dataset, the analysis applies both additive and multiplicative time-series decomposition techniques. These approaches help determine whether seasonal effects remain constant over time or scale proportionally with the level of the stock price. 
+
+
+
+2.1 Additive Decomposition Analysis 
+
+
+
+In the additive model, the observed series is expressed as: 
+
+
+
+Observed = Trend + Seasonality + Residual 
+
+
+
+Observed Component 
+
+
+
+Represents the original Close price series. 
+Shows a clear upward movement with short-term fluctuations, indicating overall growth with periodic volatility. 
+
+
+Trend Component 
+
+
+
+Captures the long-term progression of the stock price. 
+Displays a smooth and steadily increasing trend, reflecting sustained appreciation over the years. 
+
+
+Seasonal Component 
+
+
+
+Reveals repeating cyclical patterns with relatively constant amplitude. 
+Oscillates symmetrically around zero, suggesting consistent seasonal effects that do not depend on the price level. 
+
+
+Residual Component 
+
+
+
+Contains random noise and irregular movements not explained by trend or seasonality. 
+Highlights sudden spikes and drops caused by unexpected market events or external shocks. 
+ 
+
+
+
+2.2 Multiplicative Decomposition Analysis 
+
+
+
+In the multiplicative model, the observed series is represented as: 
+
+
+
+Observed = Trend × Seasonality × Residual 
+
+
+
+Observed Component 
+
+
+
+Same original Close price data, shown for reference. 
+
+
+Trend Component 
+
+
+
+Similar to the additive trend, indicating a strong long-term upward movement. 
+Confirms that the overall growth pattern is consistent across both models. 
+
+
+Seasonal Component 
+
+
+
+Displays seasonal fluctuations as ratios around 1. 
+Indicates that seasonal effects scale proportionally with the stock price level, becoming slightly stronger as prices increase. 
+
+
+Residual Component 
+
+
+
+Shows relative deviations from the expected trend and seasonality. 
+Values fluctuate around 1, capturing percentage-based irregular variations rather than absolute changes. 
+ 
+
+
+
+Objectives 
+
+
+
+Understand long-term price behavior 
+
+
+
+Use trend components to identify sustained growth or decline patterns. 
+
+
+Evaluate seasonal characteristics 
+
+
+
+Determine whether seasonality is constant in magnitude (additive) or proportional to price level (multiplicative). 
+
+
+Analyze unexplained volatility 
+
+
+
+Study residuals to detect abnormal price movements and potential outliers. 
+
+
+Select an appropriate decomposition model 
+
+
+
+Compare additive and multiplicative results to identify which better represents the stock’s structure. 
+
+
+Improve forecasting accuracy 
+
+
+
+Use decomposed components to build more robust forecasting models with reduced noise and clearer patterns. 
+
+
+
+
+Sample Visualization
+
+2.1
+
+
+
+
+
+2.2
+
+
+
+
+
+
+
+This decomposition-based analysis provides a structured foundation for understanding stock price behavior and selecting suitable forecasting techniques. 
+
+   
+
+Zip - ML471_S1_Datafile_Practice.zip ( 42.8 KB )

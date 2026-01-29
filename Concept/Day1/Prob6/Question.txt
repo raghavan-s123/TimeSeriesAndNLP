@@ -1,0 +1,88 @@
+To build an effective time-series forecasting model for electricity usage, the firm must first understand the autocorrelation structure of the data and identify suitable model parameters. After ensuring stationarity through differencing, the next step is to analyze how current changes in power consumption relate to past values. This is achieved using Autocorrelation Function (ACF) and Partial Autocorrelation Function (PACF) plots. 
+
+
+
+Using the provided dataset, the analysis focuses on the differenced power consumption series (Power_Consumption_diff), which represents period-to-period changes in electricity consumption. 
+
+
+
+Analysis Description 
+
+
+
+Data Preparation 
+
+
+
+The dataset is loaded and inspected for structure and missing values. 
+The Datetime column is converted to a datetime format and set as the time index. 
+Missing values in the differenced series are removed to ensure clean analysis. 
+The final series used for analysis is stationary and suitable for correlation diagnostics. 
+ 
+
+ACF (Autocorrelation Function) Analysis 
+
+
+
+The ACF plot shows correlations between the differenced series and its lagged values up to 30 lags. 
+Several spikes exceed the confidence bounds, indicating statistically significant autocorrelations. 
+Alternating positive and negative correlations suggest oscillatory behavior in power consumption changes. 
+Gradual decay in autocorrelation implies the presence of an MA (Moving Average) component. 
+ 
+
+PACF (Partial Autocorrelation Function) Analysis 
+
+
+
+The PACF plot highlights the direct relationship between the series and specific lags, removing intermediate effects. 
+Strong spikes at the first few lags indicate that recent past values significantly influence current consumption changes. 
+After a certain lag, most values fall within the confidence interval, suggesting a limited AR (Autoregressive) structure. 
+A sharp cutoff in PACF supports the inclusion of a low-order AR term. 
+ 
+
+Objectives 
+
+
+
+Understand temporal dependence 
+
+
+
+Identify how current power consumption changes depend on past observations. 
+
+
+Support ARIMA model selection 
+
+
+
+Use ACF patterns to determine the order of the MA component. 
+Use PACF patterns to determine the order of the AR component. 
+
+
+Validate stationarity and differencing 
+
+
+
+Confirm that the differenced series is suitable for time-series modeling. 
+
+
+Improve forecasting accuracy 
+
+
+
+Leverage insights from ACF and PACF to build well-specified ARIMA or SARIMA models. 
+
+
+
+
+Sample visualization :
+
+
+
+﻿
+
+ 
+
+
+
+This ACF–PACF analysis provides a strong statistical foundation for selecting appropriate forecasting models and understanding the short-term dynamics of power consumption behavior. 
